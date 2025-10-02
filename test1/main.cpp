@@ -1,12 +1,11 @@
 #include <iostream>
 using namespace std;
-// 華氏攝氏轉換
+
 int main() {
-    double fahrenheit;
-    double celsius;
-    cout << "請輸入華氏溫度:\n";
-    cin >> fahrenheit;
-    celsius = (fahrenheit - 32) * 5 / 9;
-    cout << "攝氏溫度是:" << celsius;
+    int sum = 0;
+    for (int i = 1; i <= 50; i++) {
+        if ((i % 7) == 0)
+            cout << i << " ";
+    }
     return 0;
 }
