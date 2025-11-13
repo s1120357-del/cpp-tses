@@ -1,39 +1,23 @@
 #include <iostream>
-using namespace std;
+
+double calculateBMI(double weight_kg, double height_cm) {
+    if (height_cm <= 0) return 0.0;
+
+    double height_m = height_cm / 100.0;
+    double bmi = weight_kg / (height_m * height_m);
+    return bmi;
+}
 
 int main() {
-    int stack[5];  // 宣告堆疊陣列
-    int top = -1;  // 指向堆疊頂端的指標
+    double weight1, weight2, height1, height2;
 
-    // ---- 推入(push)元素 ----
-    top++;
-    stack[top] = 10;
-    top++;
-    stack[top] = 20;
-    top++;
-    stack[top] = 30;
+    weight1 = 80;
+    weight2 = 70;
+    height1 = 168;
+    height2 = 188;
 
-    // ---- 顯示目前堆疊內容 ----
-    cout << "目前堆疊內容: " << endl;
-    for (int i = 0; i <= top; i++) {
-        cout << stack[i] << " ";
-    }
-    cout << endl << endl;
-
-    // ---- 彈出(pop)元素 ----
-    if (top >= 0) {
-        cout << "彈出元素: " << stack[top] << endl;
-        top--;
-    } else {
-        cout << "堆疊是空的，不能彈出！" << endl;
-    }
-
-    // ---- 顯示彈出後堆疊內容 ----
-    cout << endl << "彈出後堆疊內容: " << endl;
-    for (int i = 0; i <= top; i++) {
-        cout << stack[i] << " ";
-    }
-    cout << endl;
+    std::cout << "Your BMI is " << calculateBMI(weight1, height1) << std::endl;
+    std::cout << "Another BMI is " << calculateBMI(weight2, height2) << std::endl;
 
     return 0;
 }
