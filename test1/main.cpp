@@ -1,18 +1,17 @@
 #include <iostream>
 using namespace std;
 
-int accumulate(int n);
-
+// 華氏轉攝氏
 int main() {
-    int number = 100;  // Set the upper limit of the sum
-    cout << "從1加到" << number << "總合為: " << accumulate(number);  // Display the result
-    return 0;
-}
+    double fahrenheit;
+    double celsius;
 
-// Recursive function to calculate the sum
-int accumulate(int n) {
-    if (n == 1) {
-        return 1;  // Base case: return 1 when n reaches 1
-    }
-    return n + accumulate(n - 1);  // Recursive case: sum up the numbers
+    cout << "請輸入華氏溫度:\n";
+    cin >> fahrenheit;
+
+    celsius = (fahrenheit - 32) * 5.0 / 9.0;
+
+    cout << "攝氏溫度是: " << celsius << endl;
+
+    return 0;
 }
